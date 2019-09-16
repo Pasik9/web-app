@@ -1,0 +1,8 @@
+    <h2>Menu</h2>
+    <ul>
+        <li> <a href="deleteFilm">Find Actors For Film</a></li>
+        <li> <a href="findActors">Find Actors For N Films</a></li>
+        <li> <a href="findFilmsForYear">Find Films For Current And Previous Year</a></li>
+        <li> <a href="findActorForFilm">Find Actors As Director</a></li>
+        <li> <a href="deleteFilm">Delete Films Older Given Years</a></li>
+    </ul>

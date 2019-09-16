@@ -7,9 +7,9 @@
 <body>
 <h1>HomeLibrary</h1>
 <c:import url="/jspf/menu.jspf"></c:import>
-<form action="deleteFilm" method="post">
-    <p>Введите год:</p>
-    <input type="number"><br>
+<form action="findActors" method="post">
+    <p>Введите имя актера:</p>
+    <input type="text"><br>
 </form>
 <c:forEach items="${actorList}" var="item" >
     ${item} <br/>

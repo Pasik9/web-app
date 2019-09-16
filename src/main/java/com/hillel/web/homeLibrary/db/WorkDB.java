@@ -112,7 +112,7 @@ public class WorkDB {
         return actors;
     }
 
-    public void deleteFilm(int year) {
+    public int deleteFilm(int year) {
 
         String query = "DELETE FROM hillel.films WHERE date_release <" + year;
 
@@ -125,6 +125,7 @@ public class WorkDB {
             error.printStackTrace();
         }
         clouse(connect,statement,rs);
+        return year;
     }
     private void workInDB(List<Actor> list, String query){
         try {
