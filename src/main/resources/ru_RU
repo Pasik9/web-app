@@ -1,0 +1,26 @@
+
+user.logout = Логин
+
+user.login = Логин
+
+user.username = Имя
+
+user.password = Пароль
+
+user.role = Вход
+
+user.submit = Вход
+
+
+
+film.findActorsForFilm = Найти актера по фильму
+
+film.findActorsForNFilm = Найти актера снимавшегося в нескольких фильмах
+
+film.findActorsAsDirector=Найти актера, которы был режесером
+
+film.findFilmForCurrentAndPreviousYear = Найти фильм с датой выпуска
+
+film.deleteFilmsOlderGivenYears = Удалить фильм старше года
+
+film.deleteFilms = Удалить фильм

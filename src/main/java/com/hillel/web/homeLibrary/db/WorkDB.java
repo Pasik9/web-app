@@ -2,6 +2,8 @@ package com.hillel.web.homeLibrary.db;
 
 import com.hillel.web.homeLibrary.film.Film;
 import com.hillel.web.homeLibrary.staff.Actor;
+import com.hillel.web.homeLibrary.staff.Role;
+import com.hillel.web.homeLibrary.staff.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -127,6 +129,50 @@ public class WorkDB {
         clouse(connect,statement,rs);
         return year;
     }
+
+    public User findUser(String userName, String password) {
+        User user = null;
+        String query = "SELECT * FROM hillel.user WHERE userName = '" + userName + "' AND password = '" + password + "'";
+
+        try {
+            connect = ConnectionDB.getConnection();
+            statement = connect.prepareStatement(query);
+            rs = statement.executeQuery();
+
+            while (rs.next()) {
+                user = addUser(rs);
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        clouse(connect,statement,rs);
+
+        return user;
+    }
+
+    private User addUser(ResultSet resul) {
+        if (resul == null) {
+            throw new UnsupportedOperationException("ResultSet is required");
+        }
+
+        int id = 0;
+        String userName = "";
+        Role role = null;
+        String password = "";
+
+        try {
+            id = resul.getInt(1);
+            userName = resul.getString(2);
+            role = Role.valueOf(resul.getString(3));
+            password = resul.getString(4);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return new User(id, userName, role, password);
+    }
+
     private void workInDB(List<Actor> list, String query){
         try {
             connect = ConnectionDB.getConnection();

@@ -1,13 +1,12 @@
 package com.hillel.web.homeLibrary.staff;
 
-public class Personnel {
+public class Personnel extends Id {
 
-    private int id;
     private String name;
     private String date;
 
     public Personnel(int id,String name,String date) {
-        this.id = id;
+        super(id);
         this.name = name;
         this.date = date;
     }
@@ -16,9 +15,6 @@ public class Personnel {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -26,10 +22,6 @@ public class Personnel {
 
     public String getDate() {
         return date;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setName(String name) {
@@ -43,7 +35,6 @@ public class Personnel {
     @Override
     public String toString() {
         return "Personnel{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", date='" + date + '\'' +
                 '}';
